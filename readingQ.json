@@ -1,0 +1,202 @@
+[
+    {
+        "question": "What color is the sky?",
+        "options": [
+            "Blue",
+            "Green",
+            "Red",
+            "Yellow"
+        ],
+        "answer": "Blue"
+    },
+    {
+        "question": "What sound does a cat make?",
+        "options": [
+            "Woof",
+            "Meow",
+            "Moo",
+            "Quack"
+        ],
+        "answer": "Meow"
+    },
+    {
+        "question": "Which fruit is yellow?",
+        "options": [
+            "Apple",
+            "Banana",
+            "Grapes",
+            "Orange"
+        ],
+        "answer": "Banana"
+    },
+    {
+        "question": "How many legs does a spider have?",
+        "options": [
+            "4",
+            "6",
+            "8",
+            "10"
+        ],
+        "answer": "8"
+    },
+    {
+        "question": "What is 2 + 2?",
+        "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+        ],
+        "answer": "4"
+    },
+    {
+        "question": "Which animal is known as the king of the jungle?",
+        "options": [
+            "Elephant",
+            "Lion",
+            "Tiger",
+            "Bear"
+        ],
+        "answer": "Lion"
+    },
+    {
+        "question": "What is the capital of France?",
+        "options": [
+            "London",
+            "Berlin",
+            "Paris",
+            "Rome"
+        ],
+        "answer": "Paris"
+    },
+    {
+        "question": "What is the largest planet in our solar system?",
+        "options": [
+            "Earth",
+            "Mars",
+            "Jupiter",
+            "Saturn"
+        ],
+        "answer": "Jupiter"
+    },
+    {
+        "question": "What is H2O commonly known as?",
+        "options": [
+            "Salt",
+            "Water",
+            "Sugar",
+            "Oxygen"
+        ],
+        "answer": "Water"
+    },
+    {
+        "question": "What is the main ingredient in bread?",
+        "options": [
+            "Rice",
+            "Flour",
+            "Sugar",
+            "Butter"
+        ],
+        "answer": "Flour"
+    },
+    {
+        "question": "What is the freezing point of water?",
+        "options": [
+            "0°C",
+            "50°C",
+            "100°C",
+            "150°C"
+        ],
+        "answer": "0°C"
+    },
+    {
+        "question": "Which planet is known as the Red Planet?",
+        "options": [
+            "Earth",
+            "Mars",
+            "Venus",
+            "Jupiter"
+        ],
+        "answer": "Mars"
+    },
+    {
+        "question": "What is the largest mammal?",
+        "options": [
+            "Elephant",
+            "Blue Whale",
+            "Giraffe",
+            "Shark"
+        ],
+        "answer": "Blue Whale"
+    },
+    {
+        "question": "What is the chemical symbol for gold?",
+        "options": [
+            "Au",
+            "Ag",
+            "Fe",
+            "Pb"
+        ],
+        "answer": "Au"
+    },
+    {
+        "question": "Who wrote 'Romeo and Juliet'?",
+        "options": [
+            "Charles Dickens",
+            "William Shakespeare",
+            "Mark Twain",
+            "Jane Austen"
+        ],
+        "answer": "William Shakespeare"
+    },
+    {
+        "question": "What is the square root of 64?",
+        "options": [
+            "6",
+            "7",
+            "8",
+            "9"
+        ],
+        "answer": "8"
+    },
+    {
+        "question": "What is the capital of Japan?",
+        "options": [
+            "Beijing",
+            "Seoul",
+            "Tokyo",
+            "Bangkok"
+        ],
+        "answer": "Tokyo"
+    },
+    {
+        "question": "What is the smallest prime number?",
+        "options": [
+            "0",
+            "1",
+            "2",
+            "3"
+        ],
+        "answer": "2"
+    },
+    {
+        "question": "What is the longest river in the world?",
+        "options": [
+            "Amazon",
+            "Nile",
+            "Yangtze",
+            "Mississippi"
+        ],
+        "answer": "Nile"
+    },
+    {
+        "question": "What is the hardest natural substance on Earth?",
+        "options": [
+            "Gold",
+            "Iron",
+            "Diamond",
+            "Silver"
+        ],
+        "answer": "Diamond"
+    }
+]

@@ -1,0 +1,116 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>User Profile</title>  
+    <style>  
+        body {  
+            font-family: Arial, sans-serif;  
+            background: linear-gradient(to right, #4CAF50, #81C784);  
+            display: flex;  
+            justify-content: center;  
+            align-items: center;  
+            height: 100vh;  
+            margin: 0;  
+        }  
+        .container {  
+            background-color: #F7F7F7;  
+            border-radius: 15px;  
+            padding: 20px;  
+            text-align: center;  
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);  
+        }  
+        .progress {  
+            width: 100%;  
+            height: 20px;  
+            background-color: #e0e0e0;  
+            border-radius: 10px;  
+            margin-bottom: 20px;  
+        }  
+        .progress-bar {  
+            height: 100%;  
+            width: 75%; /* Adjust based on progress */  
+            background-color: #76c7c0;  
+            border-radius: 10px;  
+        }  
+        .avatar {  
+            border: 5px solid #FFC107;  
+            border-radius: 50%;  
+            width: 100px;  
+            height: 100px;  
+            margin: 10px auto;  
+        }  
+        .info {  
+            margin: 10px 0;  
+        }  
+        .editIcon {  
+            cursor: pointer;  
+            color: #76c7c0;  
+        }  
+    </style>  
+</head>  
+<body>  
+
+    <div class="container">  
+        <div class="progress">  
+            <div class="progress-bar"></div>  
+        </div>  
+        <div class="avatar">  
+            <img src="https://via.placeholder.com/100" alt="User Avatar" style="border-radius: 50%; width: 100%; height: 100%;">  
+        </div>  
+        <div class="info">  
+            <p>Name: <span id="name-display">Earl</span> <span class="editIcon" onclick="editField('name')">✏️</span></p>  
+            <input type="text" id="name-input" class="hidden" value="Earl" onblur="saveField('name')">  
+            <p>Age: <span id="age-display">12</span> <span class="editIcon" onclick="editField('age')">✏️</span></p>  
+            <input type="text" id="age-input" class="hidden" value="12" onblur="saveField('age')">  
+            <p>Level: <span id="level-display">Intermediate</span> <span class="editIcon" onclick="editField('level')">✏️</span></p> 
+            <select id="level-select" class="hidden" onblur="saveField('level')">
+                <option value="Beginner">Beginner</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Advanced">Advanced</option>
+            </select>
+            <button onclick="submitChanges()">Save</button>
+        </div>  
+    </div>  
+
+    <script>
+        function editField(field) {
+            document.getElementById(field + '-display').classList.add('hidden');
+            document.getElementById(field + '-input').classList.remove('hidden');
+            document.getElementById(field + '-input').focus();
+        }
+
+        function saveField(field) {
+            const input = document.getElementById(field + '-input');
+            const display = document.getElementById(field + '-display');
+            display.textContent = input.value;
+            input.classList.add('hidden');
+            display.classList.remove('hidden');
+        }
+
+        function submitChanges() {
+            const data = {
+                name: document.getElementById('name-input').value,
+                age: document.getElementById('age-input').value,
+                level: document.getElementById('level-select').value
+            };
+
+            fetch('/update_profile', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Profile updated successfully');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>  
+</html>

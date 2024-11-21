@@ -1,0 +1,202 @@
+[
+  {
+    "question": "What color is the sky on a clear day?",
+    "options": [
+      "Blue",
+      "Green",
+      "Red",
+      "Yellow"
+    ],
+    "answer": "Blue"
+  },
+  {
+    "question": "What do plants need to grow?",
+    "options": [
+      "Water",
+      "Rocks",
+      "Sand",
+      "Plastic"
+    ],
+    "answer": "Water"
+  },
+  {
+    "question": "Which animal is known as man's best friend?",
+    "options": [
+      "Cat",
+      "Dog",
+      "Fish",
+      "Bird"
+    ],
+    "answer": "Dog"
+  },
+  {
+    "question": "What is the largest planet in our solar system?",
+    "options": [
+      "Earth",
+      "Mars",
+      "Jupiter",
+      "Venus"
+    ],
+    "answer": "Jupiter"
+  },
+  {
+    "question": "What do bees make?",
+    "options": [
+      "Honey",
+      "Milk",
+      "Bread",
+      "Cheese"
+    ],
+    "answer": "Honey"
+  },
+  {
+    "question": "What is the boiling point of water?",
+    "options": [
+      "50°C",
+      "100°C",
+      "150°C",
+      "200°C"
+    ],
+    "answer": "100°C"
+  },
+  {
+    "question": "What gas do humans need to breathe?",
+    "options": [
+      "Oxygen",
+      "Carbon Dioxide",
+      "Nitrogen",
+      "Helium"
+    ],
+    "answer": "Oxygen"
+  },
+  {
+    "question": "What is the center of our solar system?",
+    "options": [
+      "Earth",
+      "Moon",
+      "Sun",
+      "Mars"
+    ],
+    "answer": "Sun"
+  },
+  {
+    "question": "What is the hardest natural substance on Earth?",
+    "options": [
+      "Gold",
+      "Iron",
+      "Diamond",
+      "Silver"
+    ],
+    "answer": "Diamond"
+  },
+  {
+    "question": "What is the process by which plants make their food?",
+    "options": [
+      "Photosynthesis",
+      "Respiration",
+      "Digestion",
+      "Fermentation"
+    ],
+    "answer": "Photosynthesis"
+  },
+  {
+    "question": "What is the chemical symbol for water?",
+    "options": [
+      "H2O",
+      "O2",
+      "CO2",
+      "NaCl"
+    ],
+    "answer": "H2O"
+  },
+  {
+    "question": "What planet is known as the Red Planet?",
+    "options": [
+      "Earth",
+      "Saturn",
+      "Jupiter",
+      "Mars"
+    ],
+    "answer": "Mars"
+  },
+  {
+    "question": "What force keeps us on the ground?",
+    "options": [
+      "Magnetism",
+      "Gravity",
+      "Friction",
+      "Electricity"
+    ],
+    "answer": "Gravity"
+  },
+  {
+    "question": "What is the main gas found in the air we breathe?",
+    "options": [
+      "Oxygen",
+      "Carbon Dioxide",
+      "Nitrogen",
+      "Hydrogen"
+    ],
+    "answer": "Nitrogen"
+  },
+  {
+    "question": "What part of the plant conducts photosynthesis?",
+    "options": [
+      "Root",
+      "Stem",
+      "Leaf",
+      "Flower"
+    ],
+    "answer": "Leaf"
+  },
+  {
+    "question": "What is the smallest unit of life?",
+    "options": [
+      "Atom",
+      "Molecule",
+      "Cell",
+      "Organ"
+    ],
+    "answer": "Cell"
+  },
+  {
+    "question": "What planet is known for its rings?",
+    "options": [
+      "Earth",
+      "Mars",
+      "Jupiter",
+      "Saturn"
+    ],
+    "answer": "Saturn"
+  },
+  {
+    "question": "What is the chemical symbol for gold?",
+    "options": [
+      "Au",
+      "Ag",
+      "Fe",
+      "Pb"
+    ],
+    "answer": "Au"
+  },
+  {
+    "question": "What is the largest organ in the human body?",
+    "options": [
+      "Heart",
+      "Liver",
+      "Lung",
+      "Skin"
+    ],
+    "answer": "Skin"
+  },
+  {
+    "question": "What is the powerhouse of the cell?",
+    "options": [
+      "Nucleus",
+      "Mitochondria",
+      "Ribosome",
+      "Chloroplast"
+    ],
+    "answer": "Mitochondria"
+  }
+]

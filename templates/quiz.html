@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .quiz-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .quiz-container button {
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: #fff;
+            cursor: pointer;
+        }
+        .quiz-container button:hover {
+            background-color: #0056b3;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1 id="question">Choose a category</h1>
+        <div id="categories">
+            <button onclick="selectCategory('geography')">Geography</button>
+            <button onclick="selectCategory('mathematics')">Mathematics</button>
+            <button onclick="selectCategory('reading')">Reading</button>
+            <button onclick="selectCategory('science')">Science</button>
+        </div>
+        <div id="options" class="hidden"></div>
+        <p id="timer" class="hidden">Time left: 10s</p>
+        <p id="score" class="hidden">Score: 0</p>
+        <button id="submit" class="hidden" onclick="submitAnswers()">Submit Answers</button>
+    </div>
+
+    <script>
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let timeLeft = 10;
+        let timer;
+        let questions = [];
+        let userAnswers = [];
+        let selectedCategory = '';
+
+        function selectCategory(category) {
+            selectedCategory = category;
+            fetch(`/get_questions?category=${category}`)
+                .then(response => response.json())
+                .then(data => {
+                    questions = data;
+                    document.getElementById('categories').classList.add('hidden');
+                    document.getElementById('options').classList.remove('hidden');
+                    document.getElementById('timer').classList.remove('hidden');
+                    document.getElementById('score').classList.remove('hidden');
+                    document.getElementById('submit').classList.remove('hidden');
+                    loadQuestion();
+                });
+        }
+
+        function loadQuestion() {
+            if (currentQuestionIndex >= questions.length) {
+                document.getElementById('question').innerText = "Quiz Over!";
+                document.getElementById('options').innerHTML = "";
+                clearInterval(timer);
+                return;
+            }
+
+            const question = questions[currentQuestionIndex];
+            document.getElementById('question').innerText = question.question;
+            const optionsDiv = document.getElementById('options');
+            optionsDiv.innerHTML = "";
+
+            question.options.forEach(option => {
+                const button = document.createElement('button');
+                button.innerText = option;
+                button.onclick = () => checkAnswer(option);
+                optionsDiv.appendChild(button);
+            });
+
+            timeLeft = 10;
+            document.getElementById('timer').innerText = `Time left: ${timeLeft}s`;
+            clearInterval(timer);
+            timer = setInterval(updateTimer, 1000);
+        }
+
+        function checkAnswer(selectedOption) {
+            const question = questions[currentQuestionIndex];
+            clearInterval(timer);
+
+            userAnswers.push(selectedOption);
+
+            if (selectedOption === question.answer) {
+                score += timeLeft;
+                document.getElementById('score').innerText = `Score: ${score}`;
+            }
+
+            currentQuestionIndex++;
+            loadQuestion();
+        }
+
+        function updateTimer() {
+            timeLeft--;
+            document.getElementById('timer').innerText = `Time left: ${timeLeft}s`;
+
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                currentQuestionIndex++;
+                loadQuestion();
+            }
+        }
+
+        function submitAnswers() {
+            fetch('/submit_answers', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ answers: userAnswers, category: selectedCategory })
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.body.innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>
